@@ -90,26 +90,24 @@ justify-content: space-between;
     }    
     .workGrid {
         display: grid;
-        grid-template-rows: 40% 20% 40%;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 200px 100px 200px;
+        grid-template-columns: 1fr 1fr 1fr;
         margin-left:6%;
         margin-right:6%;
-        column-gap: 3em;
-        row-gap: 1ex;
+        column-gap: 25px;
+        row-gap: 25px;
     }
     .workGridItem {
-        width: 100%;
-        max-height:300px;
-        padding-left: 1em;
-        padding-right: 1em;
+        max-width: 300px;
+        padding: 50px auto;
+        display:flex;
         justify-content: center;
-        align-items: center;
+        align-items:center;
     }
   
         .USDAImg {
             grid-row: 1;
             grid-column: 1;
-
         }
             .USDAimageContainer {
                 width: 100%;
@@ -203,7 +201,7 @@ justify-content: space-between;
     margin-right: 6%;
 }
     
-/* Skills Section envisioned as clickable UI */
+/* Skills Section envisioned as accordion menu as part of About page*/
 .skills {
     margin-left:6%;
 }
@@ -309,75 +307,6 @@ a {
             top:-1.5em;
 }
 
-/* Media Queries */
-@media screen and (max-width: 600px) {
-    .heroContent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        }
-    .intro-container {
-        width:100%;
-    }
-    .myWork {
-        width:100%;
-    }
-    #workGrid {
-      grid-template-rows: 40% 20% 40%;
-      grid-template-columns: 1fr;
-      width: 100%;
-      column-gap: 0;
-      row-gap: 0;
-    }
-
-   .workGridItem {
-        width: 100%;
-       justify-content: center;
-        align-items: center;
-   }
-    .USDAImg {
-        grid-row: 1;
-        grid-column: 1;
-    }
-    .SouloImg {
-        grid-row: 4;
-        grid-column: 1;
-    }
-     .BabyThriftImg {
-        grid-row: 7;
-        grid-column: 1;
-    }
-   
-    .USDAtitle {
-        grid-row: 2;
-        grid-column: 1;
-    }
-    .Soulotitle {
-        grid-row: 5;
-        grid-column: 1;
-    }
-    .BabyThriftTitle {
-        grid-row: 8;
-        grid-column: 1;
-    }
-    
-    .USDAsummary {
-        grid-row: 3;
-        grid-column: 1;
-    }
-    .Soulosummary {
-        grid-row: 6;
-        grid-column: 1;
-    }
-    .BabyThriftsummary {
-        grid-row: 9;
-        grid-column: 1;
-    }
-}
-    #worktimeline {
-        transform: scale(.5);
-    }
-
 /* Font Styles */
 
         h1 {
@@ -447,3 +376,108 @@ a {
             color: #373434;
             line-height: 48px;
         }
+
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .heroContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: 3% auto;
+    }
+    .mypicture {
+        transform: scale(.6) translate(-2em) ;
+        padding: 1%;
+    }
+    .intro-container {
+        max-width: 500px;
+        width: 100%;
+        padding: 1%;
+    }
+    .myWork {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: 3% auto;
+
+    }
+    #workGrid {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      column-gap: 0;
+      row-gap: 5px;
+      margin:50px;
+
+    }
+   .workGridItem {
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+       justify-content: center;
+        align-items: first baseline;
+        margin-left:50px;
+        margin-right:50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+   }
+    .USDAImg {
+        height: 148px;
+        grid-row: 1;
+        grid-column: 1;
+       align-items: center;
+       margin-top: 20px;;
+    
+    }
+    .SouloImg {
+       height: 168px;
+        grid-row: 4;
+        grid-column: 1;
+        margin-bottom: 5px;
+        align-items: center;
+    }
+     .BabyThriftImg {
+        height: 200px;
+        grid-row: 7;
+        grid-column: 1;
+        margin-bottom: 5px;
+    }
+     .USDAtitle {
+        width:100%;
+        height: 48px;
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .Soulotitle {
+        grid-row: 5;
+        grid-column: 1;
+    }
+    .BabyThriftTitle {
+        grid-row: 8;
+        grid-column: 1;
+    }
+    
+    .USDAsummary {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    .Soulosummary {
+        height: 148px;
+        grid-row: 6;
+        grid-column: 1;
+        margin-top: 5px;
+        margin-bottom:50px;
+    }
+    .BabyThriftsummary {
+        grid-row: 9;
+        grid-column: 1;
+        margin-top: 5px;
+        margin-bottom:50px;
+    }
+    #worktimeline {
+        transform: scale(.5);
+    }
+}
